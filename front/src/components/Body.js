@@ -1,7 +1,18 @@
 import React from "react";
 import "../style/Main.css";
 import BgVideo from "../video/bgVideo.mp4";
+import sendData from "../api/sendData";
+import { useState } from "react";
+
 export default function Body() {
+  const [searchText, setSearchText] = useState('');
+
+  const handleChange = event => {
+    setSearchText(event.target.value);
+
+    console.log('value is:', event.target.value);
+  };
+
   return (
     <body>
       <div class="s01">
@@ -17,11 +28,13 @@ export default function Body() {
               <input
                 id="search"
                 type="text"
+                value={searchText}
+                onChange={handleChange}
                 placeholder="What are you looking for?"
               />
             </div>
             <div class="input-field third-wrap">
-              <button class="btn-search" type="button">
+              <button class="btn-search" type="button" onClick={() => { sendData(searchText) }}>
                 Search
               </button>
             </div>

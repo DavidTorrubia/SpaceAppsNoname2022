@@ -8,7 +8,7 @@ import json
 from opensearchpy import OpenSearch
 
 # folder path
-from backend import extractText
+import extractText
 
 dir_path = r'..\\resources\\pdf'
 dir_pathtext = '..\\resources\\pdf\\'
@@ -59,15 +59,19 @@ for i in range(len(res)):
     nasa_Json = requests.get('https://ntrs.nasa.gov/api/citations/' + id)
     r = nasa_Json.json()
     title = r['title']
+    abstract = r['abstract']
+    author = r['authorAffiliations'][0]['meta']['author']['name']
     print(kw)
     for Key in kw:
-        first = Key[0]  # could be an int or a tuple
+        first = Key[0]
         CleanKW.append(first)
     print(CleanKW)
 
     # create document
     document = {
         'title': title,
+        'author': author,
+        'abstract': abstract,
         'url': 'https://ntrs.nasa.gov/api/citations/' + id + '/downloads/' + res[i],
         'keywords': CleanKW,
         'body': text

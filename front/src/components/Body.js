@@ -6,15 +6,15 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Body() {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     navigate(`/search?value=${searchText}`);
-  }
+  };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setSearchText(event.target.value);
   };
 

@@ -1,6 +1,10 @@
 import os
+import urllib
 
+import requests
 import opensearchpy
+import json
+
 from opensearchpy import OpenSearch
 
 # folder path
@@ -51,6 +55,10 @@ for i in range(len(res)):
     kw = extractText.getkeywords(text)
     id = res[i].replace('.pdf', '')
     #    print(text)
+
+    nasa_Json = requests.get('https://ntrs.nasa.gov/api/citations/' + id)
+    r = nasa_Json.json()
+    title = r['title']
     print(kw)
     for Key in kw:
         first = Key[0]  # could be an int or a tuple
@@ -59,6 +67,7 @@ for i in range(len(res)):
 
     # create document
     document = {
+        'title': title,
         'url': 'https://ntrs.nasa.gov/api/citations/' + id + '/downloads/' + res[i],
         'keywords': CleanKW,
         'body': text

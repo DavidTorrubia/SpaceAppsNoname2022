@@ -21,7 +21,7 @@ export default function Body() {
         </video>
         <form className="z-index">
           <fieldset>
-            <legend>Discover the Amazing City</legend>
+            <legend>Discover the Amazing Space</legend>
           </fieldset>
           <div class="inner-form">
             <div class="input-field first-wrap">

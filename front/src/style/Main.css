@@ -612,12 +612,16 @@ legend {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  filter: brightness(50%);
 }
 .z-index {
   z-index: 9999;
 }
-.fix-bg {
-  background: rgb(0 0 0 / 74%);
+.landing-bg {
+  background: rgb(0 0 0 / 48%);
+}
+.main-bg {
+  background: rgb(44 43 43);
 }
 .logo {
   height: 3rem;
@@ -638,4 +642,17 @@ legend {
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #4272d7;
   --bs-gradient: none;
+}
+.inner-form {
+  background: none !important;
+}
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  color: var(--bs-nav-link-color) !important;
+  text-decoration: none !important;
+}
+a:hover {
+  transition: 0.3s;
+  color: whitesmoke !important;
 }

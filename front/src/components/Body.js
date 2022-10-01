@@ -3,15 +3,19 @@ import "../style/Main.css";
 import BgVideo from "../video/bgVideo.mp4";
 import sendData from "../api/sendData";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Body() {
   const [searchText, setSearchText] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    navigate(`/search?value=${searchText}`);
+  }
 
   const handleChange = event => {
     setSearchText(event.target.value);
-
-    console.log('value is:', event.target.value);
   };
 
   return (
@@ -20,7 +24,7 @@ export default function Body() {
         <video autoPlay muted loop id="myVideo">
           <source src={BgVideo} type="video/mp4" />
         </video>
-        <form className="z-index">
+        <form className="z-index" onSubmit={handleSubmit}>
           <fieldset>
             <legend>Discover the Amazing Space</legend>
           </fieldset>

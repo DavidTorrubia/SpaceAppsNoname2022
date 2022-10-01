@@ -15,16 +15,6 @@ export default function Search() {
 
   const [results, setResults] = useState([]);
 
-  useEffect(() => {
-    if(query.get('value')) {
-      sendData(query.get('value'), (response) => {
-        // setResults(response);
-        setResults(sampleData);
-        console.log(sampleData);
-      });
-    }
-  }, [query]);
-
   const sampleData = [ 
     {
       titulo: query.get('value') + " Research Paper",
@@ -49,10 +39,24 @@ export default function Search() {
     },
   ];
 
+  useEffect(() => {
+    if(query.get('value')) {
+      sendData(query.get('value'), (response) => {
+        // setResults(response);
+        let newSample = sampleData;
+        setResults(newSample);
+      });
+    }
+  }, [query]);
+
+  useEffect(() => {
+    console.log(results)
+  }, [results])
+
   return (
     <div className="Search">
       <HeaderSecondaryNav />
-      <SearchBody />
+      <SearchBody results={results}/>
     </div>
   );
 }

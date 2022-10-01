@@ -13,13 +13,6 @@ export default function SearchBody() {
           <div class="well search-result">
             <div class="row">
               <a href="#">
-                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
-                  <img
-                    class="img-responsive"
-                    src="https://via.placeholder.com/400x200/7B68EE/000000"
-                    alt=""
-                  />
-                </div>
                 <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
                   <Link to="/searchContent">
                     {" "}
@@ -37,13 +30,6 @@ export default function SearchBody() {
           <div class="well search-result">
             <div class="row">
               <a href="#">
-                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
-                  <img
-                    class="img-responsive"
-                    src="https://via.placeholder.com/400x200/FA8072/000000"
-                    alt=""
-                  />
-                </div>
                 <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
                   <h3>Blueberry Sport</h3>
                   <p>
@@ -58,13 +44,34 @@ export default function SearchBody() {
           <div class="well search-result">
             <div class="row">
               <a href="#">
-                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
-                  <img
-                    class="img-responsive"
-                    src="https://via.placeholder.com/400x200/48D1CC/000000"
-                    alt=""
-                  />
+                <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
+                  <h3>Power Thirst</h3>
+                  <p>
+                    Cras nisi dolor, tristique id vehicula vitae, mollis at
+                    eros. Ut euismod sem eu tellus vestibulum, in facilisis est
+                    feugiat. Mauris sed leo sed erat vestibulum suscipit.
+                  </p>
                 </div>
+              </a>
+            </div>
+          </div>
+          <div class="well search-result">
+            <div class="row">
+              <a href="#">
+                <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
+                  <h3>Power Thirst</h3>
+                  <p>
+                    Cras nisi dolor, tristique id vehicula vitae, mollis at
+                    eros. Ut euismod sem eu tellus vestibulum, in facilisis est
+                    feugiat. Mauris sed leo sed erat vestibulum suscipit.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="well search-result">
+            <div class="row">
+              <a href="#">
                 <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
                   <h3>Power Thirst</h3>
                   <p>

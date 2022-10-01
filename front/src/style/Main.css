@@ -656,3 +656,10 @@ a:hover {
   transition: 0.3s;
   color: whitesmoke !important;
 }
+.flex-end {
+  justify-content: flex-end !important;
+  margin-right: 0 !important;
+}
+.fix-margin {
+  margin-right: 0 !important;
+}

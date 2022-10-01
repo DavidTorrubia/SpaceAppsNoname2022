@@ -3,6 +3,7 @@ import "../style/Main.css";
 import BgVideo from "../video/bgVideo.mp4";
 import sendData from "../api/sendData";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Body() {
   const [searchText, setSearchText] = useState('');
@@ -34,9 +35,11 @@ export default function Body() {
               />
             </div>
             <div class="input-field third-wrap">
-              <button class="btn-search" type="button" onClick={() => { sendData(searchText) }}>
-                Search
-              </button>
+              <Link to={`/search?value=${searchText}`}>
+                <button class="btn-search" type="button">
+                  Search
+                </button>
+              </Link>
             </div>
           </div>
         </form>

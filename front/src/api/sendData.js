@@ -1,9 +1,9 @@
-export default function sendData(texto) {
+export default function sendData(texto, callback) {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ key: texto })
     };
     fetch('/api/search', requestOptions).then(response => response.json())
-    .then(data => console.log({ postId: data.id }));
+    .then(data => callback(data));
 }

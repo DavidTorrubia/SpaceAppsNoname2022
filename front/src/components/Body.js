@@ -23,7 +23,7 @@ export default function Body() {
             </div>
             <div class="input-field third-wrap">
               <Link to="/search">
-                <button class="btn-search" type="button">
+                <button class="btn-search" type="button ">
                   Search
                 </button>
               </Link>

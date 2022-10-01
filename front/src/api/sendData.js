@@ -4,6 +4,6 @@ export default function sendData(texto, callback) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ key: texto })
     };
-    fetch('/api/search', requestOptions).then(response => response.json())
+    fetch('http://localhost:3000/api/search', requestOptions).then(response => response.json())
     .then(data => callback(data));
 }

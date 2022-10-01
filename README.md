@@ -1,7 +1,5 @@
 # SpaceAppsNoname2022
 
-
-
 ## How to Run
 
 Run from the project directory.

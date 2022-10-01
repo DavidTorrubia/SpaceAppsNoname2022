@@ -1,11 +1,8 @@
 from urllib import response
 from flask import Flask
-<<<<<<< HEAD
 from backend.searchScript import searchCoincidences
-=======
 from flask import jsonify
 from flask import request
->>>>>>> a72c3f94c0591ba3784dc0dbf71e5a9a921a338f
 import extractText
 import nltk
 import searchScript

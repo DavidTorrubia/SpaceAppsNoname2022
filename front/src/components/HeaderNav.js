@@ -24,25 +24,15 @@ function HeaderNav(props) {
             src="https://media.discordapp.net/attachments/1025696844916985917/1025750217154383882/logo-nasa-fondo-oscuro-removebg-preview.png"
           />
         </Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features">
-              <Link to="/search">About</Link>
-            </Nav.Link>
-            <Nav.Link href="#pricing">Help</Nav.Link>
-            <Nav.Link href="#pricing">Log In</Nav.Link>
-          </Nav>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          className="flex-end"
+        />
+        <Navbar.Collapse id="responsive-navbar-nav" className="flex-end">
           <Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button className="btn-outline-success-main">Search</Button>
-            </Form>
+            <Nav.Link>About</Nav.Link>
+            <Nav.Link>Help</Nav.Link>
+            <Nav.Link>Log In</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/Main.css";
 import BgVideo from "../video/bgVideo.mp4";
+import { Link } from "react-router-dom";
 export default function Body() {
   return (
     <body>
@@ -21,9 +22,11 @@ export default function Body() {
               />
             </div>
             <div class="input-field third-wrap">
-              <button class="btn-search" type="button">
-                Search
-              </button>
+              <Link to="/search">
+                <button class="btn-search" type="button">
+                  Search
+                </button>
+              </Link>
             </div>
           </div>
         </form>

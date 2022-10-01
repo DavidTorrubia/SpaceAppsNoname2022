@@ -27,14 +27,9 @@ function HeaderSecondaryNav() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">
-              <Link to="/search">About</Link>
-            </Nav.Link>
-            <Nav.Link href="#pricing">Help</Nav.Link>
-            <NavDropdown title="Log In" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Log In</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Sign In</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link>About</Nav.Link>
+            <Nav.Link>Help</Nav.Link>
+            <Nav.Link>Log In</Nav.Link>
           </Nav>
           <Nav>
             <Form className="d-flex">

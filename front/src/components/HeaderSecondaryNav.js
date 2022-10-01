@@ -7,10 +7,10 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import React from "react";
 import "../style/Main.css";
 import { Link } from "react-router-dom";
-function HeaderNav(props) {
+function HeaderSecondaryNav() {
   return (
     <Navbar
-      className="landing-bg"
+      className="main-bg"
       collapseOnSelect
       expand="lg"
       variant="dark"
@@ -31,7 +31,10 @@ function HeaderNav(props) {
               <Link to="/search">About</Link>
             </Nav.Link>
             <Nav.Link href="#pricing">Help</Nav.Link>
-            <Nav.Link href="#pricing">Log In</Nav.Link>
+            <NavDropdown title="Log In" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Log In</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Sign In</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
           <Nav>
             <Form className="d-flex">
@@ -49,5 +52,4 @@ function HeaderNav(props) {
     </Navbar>
   );
 }
-
-export default HeaderNav;
+export default HeaderSecondaryNav;

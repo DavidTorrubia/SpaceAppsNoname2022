@@ -21,9 +21,43 @@ client = OpenSearch(
 def extractToken (search):
     kw_model = KeyBERT()
     keywords = kw_model.extract_keywords(search, keyphrase_ngram_range=(1,3),stop_words=None)
-    return keywords
+    salida = []
+    for keyword in keywords :
+        first = keyword[0]
+        salida.append(first)
+    return salida
 
 def searchCoincidences(search):
-    query = {keyword: search}
+    shouldQueries = []
+    for word in search:
+        shouldQueries.append({ "match_phrase": {"keywords": "\"" + word + "\""}})
+    # query = {
+    #     "query" : { 
+    #         "match" : { 
+    #             "keywords" : salida
+    #             } 
+    #         } 
+    #     }
+
+    query = {
+        "query": {
+            "bool": {
+                "must": [],
+                "filter": [
+                    {
+                    "match_all": {}
+                    },
+                    {
+                    "bool": {
+                        "should": shouldQueries,
+                        "minimum_should_match": 1
+                    }
+                    }
+                ],
+                "should": [],
+                "must_not": []
+            }
+        }
+    }
     coincidences = client.search(body = query)
     return coincidences

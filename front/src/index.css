@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.row a:hover {
+  color: black !important;
+}
+
+.errormessage {
+  text-align: center;
+  font-size: 48px;
+  padding: 20px;
+  font-weight: bold;
+  color: #666;
+}

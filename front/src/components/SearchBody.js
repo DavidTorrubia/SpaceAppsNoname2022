@@ -16,6 +16,9 @@ export default function SearchBody(props) {
             {props.results && props.results.map( result => (
               <SearchCard searchInfo={result} />
             ))}
+            {props.results.length == 0 &&
+              (<h1 className="errormessage">We couldn't find anything! <br></br> :( </h1>)
+            }         
           <div class="row">
             <button type="button" class="btn btn-info  btn-block">
               <i class="glyphicon glyphicon-refresh"></i>Load more...

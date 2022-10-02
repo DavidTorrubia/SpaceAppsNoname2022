@@ -6,8 +6,22 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import React from "react";
 import "../style/Main.css";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useActionData, useNavigate } from "react-router-dom";
+
 function HeaderSecondaryNav() {
+  const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate(`/search?value=${searchText}`);
+  };
+
+  const handleChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
   return (
     <Navbar
       className="main-bg"
@@ -32,15 +46,21 @@ function HeaderSecondaryNav() {
             <Nav.Link>Log In</Nav.Link>
           </Nav>
           <Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button className="btn-outline-success-main">Search</Button>
-            </Form>
+            <form className="d-flex" onSubmit={() => {handleSubmit()}}>
+              <input
+                  id="search"
+                  type="text"
+                  value={searchText}
+                  onChange={handleChange}
+                  className="me-2 form-control"
+                  placeholder="What are you looking for?"
+                />
+                <Link to={`/search?value=${searchText}`}>
+                  <button className="btn btn-primary" type="button">
+                    Search
+                  </button>
+                </Link>
+            </form>
           </Nav>
         </Navbar.Collapse>
       </Container>

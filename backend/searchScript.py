@@ -1,7 +1,7 @@
 from ast import keyword
 from keybert import KeyBERT
 import flask
-from backend.extractText import extracttext
+from extractText import extracttext
 from opensearchpy import OpenSearch
 
 host = 'localhost'
@@ -61,3 +61,13 @@ def searchCoincidences(search):
     }
     coincidences = client.search(body = query)
     return coincidences
+
+def coincidencesToResponse(coincidences):
+    hits = coincidences['hits']
+    hitsList = hits['hits']
+    mappedHits = map(hitToResponse, hitsList)
+    return list(mappedHits)
+
+def hitToResponse(hit):
+    return hit['_source']
+    

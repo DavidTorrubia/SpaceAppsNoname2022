@@ -15,36 +15,10 @@ export default function Search() {
 
   const [results, setResults] = useState([]);
 
-  const sampleData = [ 
-    {
-      titulo: query.get('value') + " Research Paper",
-      url: "https://dx.doi.org/10.1103/physrevlett.107.065001",
-      kw: [query.get('value') + "1", query.get('value') + "2", query.get('value') + "3"],
-      cuerpo: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, " +
-        "making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure" 
-    },
-    {
-      titulo: query.get('value') + " Research Paper",
-      url: "https://dx.doi.org/10.1103/physrevlett.107.065001",
-      kw: [query.get('value') + "1", query.get('value') + "2", query.get('value') + "3"],
-      cuerpo: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, " +
-        "making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure" 
-    },
-    {
-      titulo: query.get('value') + " Research Paper",
-      url: "https://dx.doi.org/10.1103/physrevlett.107.065001",
-      kw: [query.get('value') + "1", query.get('value') + "2", query.get('value') + "3"],
-      cuerpo: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, " +
-        "making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure" 
-    },
-  ];
-
   useEffect(() => {
     if(query.get('value')) {
       sendData(query.get('value'), (response) => {
-        // setResults(response);
-        let newSample = sampleData;
-        setResults(newSample);
+        setResults(response);
       });
     }
   }, [query]);
